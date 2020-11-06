@@ -1,6 +1,7 @@
 * {
     border: 2px dotted black;
-    background-color: lightgray;
+    background-color: whitesmoke;
+    font-size: 16px;
 }
 html {
     height: 100%;
@@ -9,38 +10,81 @@ body {
     position: relative;
 }
 .wrap *{
-    min-height: 100%;
+    /*min-height: 100%;*/
 }
 .header {
     height: 50px;
 }
 .wrap {
-    height: calc(100% - 50px);
+    height: calc(100% - 52px);
     width: 100%;
     display: flex;
 }
 #left_menu {
     position: sticky;
     float: left;
-    display: grid;
-    overflow: scroll;
+    /*display: grid;*/
+    overflow-y: scroll;
     height: auto;
     margin: 0 auto;
     flex-wrap: wrap;
+    /*min-width: 150px;*/
+    /*max-width: 200px;*/
+    padding: 5px;
 }
 
 #right_menu {
     position: sticky;
     float: right;
     display: grid;
-    overflow: scroll;
+    overflow-y: scroll;
     height: auto;
     margin: 0 auto;
     flex-wrap: wrap;
+    min-width: 150px;
+    max-width: 200px;
 }
 
 #main_content {
     height: 100%;
-    overflow: scroll;
+    width: 100%;
+    overflow-y: scroll;
     display: grid;
+}
+/*タブレット用*/
+@media screen and (max-width: 1280px) {
+    *{
+        background-color: lightgray;
+    }
+    #left_menu{
+        visibility: visible;
+    }
+}
+
+/*タブレット用*/
+@media screen and (max-width: 960px) {
+    *{
+        background-color: darkgray;
+    }
+    #left_menu{
+        display: none;
+    }
+
+}
+
+/*スマホ用*/
+@media screen and (orientation: portrait) {
+    *{
+        background-color: slategray;
+    }
+
+    #left_menu{
+        display: none;
+    }
+
+    #right_menu{
+        display: none;
+    }
+
+
 }
